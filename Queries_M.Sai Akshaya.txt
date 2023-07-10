@@ -1,0 +1,39 @@
+create table designation(desgid int primary key,desgname varchar(60),desgdesc varchar(60));
+
+create table role(roleid int primary key,rolename varchar(60),roledesc varchar(60));
+
+
+create table employee(Employee_Id int primary key,First_Name varchar(36),Last_Name varchar(20),Sur_Name varchar(20),	DOJ varchar(20),DOB varchar(20),Qualification varchar(20),Address varchar(100),Contact_Number int,desgid int,FOREIGN KEY (desgid) REFERENCES Designation(desgid),roleid int,FOREIGN KEY (roleid) REFERENCES Role(roleid));
+
+//INSERTING VALUES INTO DESIGNATION TABLE//
+
+insert into designation values(1,'Associate','Associate');
+insert into designation values(2,'Senior Associate','Senior Associate');
+insert into designation values(3,'Lead Consultant','Lead Consultant');
+insert into designation values(4,'Senior Consultant','Senior Consultant');
+insert into designation values(5,'Associate Managing Consultant','Associate Managing Consultant');
+insert into designation values(6,'Managing Consultant','Managing Consultant ');
+insert into designation values(7,'Principle Consultant','Principle Consultant ');
+insert into designation values(8,'Vice President','Vice President');
+insert into designation values(9,'Senior Vice President','Senior Vice President');
+insert into designation values(10,'CEO','CEO');
+insert into designation values(11,'Managing Director','Managing Director');
+
+//INSERTING VALUES INTO ROLE TABLE//
+
+insert into role values(1,'Software Engineer','Software Engineer');
+insert into role values(2,'Senior Software Engineer','Senior Software Engineer');
+insert into role values(3,'Lead Consultant','Lead Consultant');
+insert into role values(4,'Test Engineer','Test Engineer');
+insert into role values(5,'Business Analyst','Business Analyst');
+insert into role values(6,'Technology Specialist','Technology Specialist');
+insert into role values(7,'Manager','Manager');
+insert into role values(8,'Senior Manager','Senior Manager');
+
+
+
+insert into Employee values(1,'xxx','yyy','xxy',str_to_date('10-7-2011','%e-%c-%Y'),str_to_date('15-02-1986','%e-%c-%Y'),'B.Tech','abcd',84454545,2,1);
+
+insert into Employee values(2,'xyz','yzx','yxv',str_to_date('15-2-2010','%e-%c-%Y'),str_to_date('21-07-1984','%e-%c-%Y'),'M.C.A','wewr',87564523,3,2);
+
+insert into Employee values(3,'bcd','tys','yuo',str_to_date('15-3-2011','%e-%c-%Y'),str_to_date('12-12-1982','%e-%c-%Y'),'B.Tech','wewe',88564552,2,3);
